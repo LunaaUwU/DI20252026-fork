@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Contadores por Persona</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>Contador de Clase</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Contadores de Clase</h1>
-    <div class="acciones">
-      <button id="btn-cargar-nombres">Cargar nombres (nombres.txt)</button>
-      <label class="file-label">
-        <input type="file" id="input-archivo" accept=".txt,.json" />
-        Cargar archivo local
-      </label>
-      <button id="btn-reset">Reiniciar todos a 10</button>
-      <button id="btn-reset-5">Reiniciar todos a 5</button>
-      <button id="btn-reset-0">Reiniciar todos a 0</button>
-      <button id="btn-mas-global">Subir nota</button>
-      <button id="btn-menos-global">Bajar nota</button>
-      <button id="btn-tema">Modo oscuro</button>
+  <h1>Contador de Clase</h1>
+  <div id="txt-file-container">
+    <input type="file" id="file-input" accept=".txt" style="display: none;">
+    <button id="btn-upload">Upload TXT</button>
+  </div>
+  <div id="boton-container">
+    <div class="botones">
+      <button id="btn-menos">-</button>
+      <button id="btn-mas">+</button>
+      <button id="btn-boom">Public execution</button>
+      <button id="btn-deselect">Deselect All</button>
+      <button id="btn-random">🎁</button>
     </div>
-  </header>
+  </div>
+  <div id="input-container">
+    <p>Step</p>
+    <input type="number" id="input-step" value="1" step="0.1" min="0.1" max="10">
+  </div>
+  <div id="alumno-container">
+    <div id="alumno1-container" class="alumno-card">
+        <h2 id="alumno1">Ana</h2>
+        <span id="contador-alumno1" class="contador">10</span>
+    </div>
 
-  <main>
-    <section id="estado" aria-live="polite"></section>
-    <section id="lista" class="grid"></section>
-  </main>
+    <div id="alumno2-container" class="alumno-card">
+        <h2 id="alumno2">Pedro</h2>
+        <span id="contador-alumno2" class="contador">10</span>
+    </div>
 
-  <template id="tpl-persona">
-    <article class="card persona" data-nombre="" tabindex="0">
-      <header class="card-head">
-        <h2 class="nombre"></h2>
-      </header>
-      <div class="contador-wrap">
-        <button class="btn redondeado btn-menos" aria-label="Restar uno">−1</button>
-        <span class="contador" data-valor="10" aria-live="polite">10</span>
-        <button class="btn redondeado btn-mas" aria-label="Sumar uno">+1</button>
-      </div>
-    </article>
-  </template>
+    <div id="alumno3-container" class="alumno-card">
+        <h2 id="alumno3">Lucía</h2>
+        <span id="contador-alumno3" class="contador">10</span>
+    </div>
 
-  <script src="script.js" type="module"></script>
+    <div id="alumno4-container" class="alumno-card">
+        <h2 id="alumno4">María</h2>
+        <span id="contador-alumno4" class="contador">10</span>
+    </div>
+
+    <div id="alumno5-container" class="alumno-card">
+        <h2 id="alumno5">Juan</h2>
+        <span id="contador-alumno5" class="contador">10</span>
+    </div>
+
+    <div id="alumno6-container" class="alumno-card">
+        <h2 id="alumno6">Fatima</h2>
+        <span id="contador-alumno6" class="contador">10</span>
+    </div>
+
+    <div id="alumno7-container" class="alumno-card">
+        <h2 id="alumno7">Héctor</h2>
+        <span id="contador-alumno7" class="contador">10</span>
+    </div>
+
+    <div id="alumno8-container" class="alumno-card">
+        <h2 id="alumno8">Jose</h2>
+        <span id="contador-alumno8" class="contador">10</span>
+    </div>
+</div>
+
+  <img src="" id="img-boom">
+  <img src="" id="img-coins">
+
+  <img src="borzoi-side-eye.gif" width="3%">
+
+  <script src="script.js"></script>
 </body>
 </html>
