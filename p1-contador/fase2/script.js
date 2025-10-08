@@ -39,6 +39,31 @@ for (let i = 1; i <= numeroAlumnos; i++) {
       alumnoCard.style.border = alumnoData.selected ? "3px solid black" : "3px solid transparent";
     });
   }
+
+  const alumno0Card = document.getElementById("alumno0-container");
+  const contadorProfe = document.getElementById("contador-profe");
+
+  alumno0Card.addEventListener("click", () => {
+    const alreadyAdded = alumnos.includes(alumno0Card);
+
+    if (!alreadyAdded) {
+      const alumno0Data = {
+        contador: parseInt(contadorProfe.textContent),
+        selected: false,
+        span: contadorProfe
+      };
+
+      alumnos.push(alumno0Card);
+      contadores.push(alumno0Data);
+
+      alumno0Card.style.border = "3px solid black";
+    } else {
+      const index = alumnos.indexOf(alumno0Card);
+      contadores[index].selected = !contadores[index].selected;
+      alumno0Card.style.border = contadores[index].selected ? "3px solid black" : "3px solid transparent";
+    }
+  });
+
 }
 
 function actualizarContador() {
